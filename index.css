@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    max-width: 100%;
+    font-size: calc(0.3125vw + 10px);
+    font-family: "Montserrat", sans-serif;
+    background-image: url("./dots.png"),  linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0));
+    min-height: 100vh;
+}
+
+.container {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+}
+
+.content {
+    position: relative;
+    width: 36%;
+    max-width: 586px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4.5525rem 0 0 6.259375rem;
+    align-self: flex-start
+}
+
+@media (max-width: 768px) {
+    .content {
+        width: 100%;
+        padding: 0;
+        margin: 1.0825rem 0 0 1.0075rem;
+    }
+}
+
+.content__header {
+    font-size: 3.5rem;
+    color: rgb(255, 255, 255);
+    width: 13ch;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .content__header {
+        margin: 0;
+        font-size: 2.125rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content__body {
+        margin: 2.089375rem 0 0 0;
+    }
+}
+
+.content__paragraph {
+    font-size: 1.375rem;
+    color: rgb(255, 255, 255);
+    line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+    .content__paragraph {
+        font-size: 1rem;
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .content__footer {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .content__footer {
+        z-index: 10;
+    }
+}
+
+@media (min-width: 769px) {
+    .container__footer {
+        display: none;
+    }
+}
+
+.prompting {
+    font-weight: 900;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+}
+
+.say {
+    font-size: 2.8rem;
+    position: relative;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .say {
+        font-size: 2.415625rem;
+    }
+}
+
+.okay {
+    display: block;
+    position: absolute;
+    font-size: 3.83875rem;
+    left: 1.5ch;
+    top: 100%;
+    width: max-content;
+}
+
+@media (max-width: 768px) {
+    .okay {
+        font-size: 3.83875rem;
+        position: static;
+    }
+}
+
+.yamaguchi {
+    font-size: 3.11625rem;
+}
+
+.scene {
+    position: absolute;
+    z-index: 10;
+    height: 100%;
+    width: 27.1875rem;
+    right: calc(-27.1875rem - 27.1875rem / 8);
+    bottom: calc(-49.415rem / 6);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .scene {
+        width: 100%;
+        height: calc(49.415rem + 64px);
+        margin: 0 0 0 -1.0075rem;
+        position: static;
+        left: unset;
+        top: unset;
+        transform: unset;
+    }
+}
+
+.scene__frame {
+    position: absolute;
+    width: 100%;
+    height: calc(49.415rem + 64px);
+    overflow: hidden;
+}
+
+.human {
+    position: absolute;
+    width: 27.1875rem;
+    height: 49.415rem;
+    bottom: calc(-49.415rem - 32px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    animation: lift 3s 0.2s linear forwards;
+}
+
+.hole {
+    position: absolute;
+    width: 100%;
+    height: 7rem;
+    background-color: rgb(8 8 8);
+    border-radius: 50%;
+    bottom: -24px;
+    z-index: 1;
+    transform: scale(0.75);
+    opacity: 0;
+    transition: transform 1.2s linear, opacity 0.5s linear;
+    box-shadow: 0 2px 8px 2px rgb(64 64 64);
+}
+
+.image {
+    width: 40%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .image {
+        align-self: center;
+        width: 80%;
+        margin: 1rem 0 0 0;
+    }
+}
+
+@keyframes lift {
+    0% {
+        bottom: calc(-49.415rem - 32px);
+    }
+    100% {
+        bottom: 64px;
+    }
+}
+
+@keyframes levitation {
+    from {
+        bottom: 64px;
+    }
+
+    to {
+        bottom: 48px;
+    }
+}
